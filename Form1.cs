@@ -23,7 +23,7 @@ namespace dxvk_osd_customizer
 
         private void buttonCreate_Click(object sender, System.EventArgs e)
         {
-            string aString = "";
+            string dxvk_osd_feature = "\ndxvk.hud=";
             /*
             foreach (Control c in this.Controls)
             {
@@ -32,37 +32,75 @@ namespace dxvk_osd_customizer
                     c.Controls.
                 }
               */
-            if (checkBoxDevinfo.Checked)
-                aString = "\ndxvk.hud=devinfo";
-
-            /*
-            if (!File.Exists("dxvk.conf"))
+            if (!checkBoxSelectAll.Checked)
             {
-
-                File.Create("dxvk.conf").Close();
-                using (StreamWriter sw = File.AppendText("dxvk.conf"))
-                { sw.WriteLine("dxvk.enableAsync=true" +
-                            "\nRADV_PERFTEST = gpl" +
-                            "\ndxvk.gplAsyncCache = true"+aString); 
-                }
-             }
-                          
+                if (checkBoxDevinfo.Checked)
+                    dxvk_osd_feature += "devinfo,";
+                if (checkBoxfps.Checked)
+                    dxvk_osd_feature += "fps,";
+                if (checkBoxframetime.Checked)
+                    dxvk_osd_feature += "frametime,";
+                if (checkBoxSubmissions.Checked)
+                    dxvk_osd_feature += "submissions,";
+                if (checkBoxDrawcalls.Checked)
+                    dxvk_osd_feature += "drawcalls,";
+                if (checkBoxGpuload.Checked)
+                    dxvk_osd_feature += "gpuload,";
+                if (checkBoxVersion.Checked)
+                    dxvk_osd_feature += "version,";
+                if (checkBoxCompiler.Checked)
+                    dxvk_osd_feature += "compiler,";
+                if (checkBoxPipelines.Checked)
+                    dxvk_osd_feature += "pipelines,";
+                if (checkBoxDescriptors.Checked)
+                    dxvk_osd_feature += "descriptors,";
+                if (checkBoxMemory.Checked)
+                    dxvk_osd_feature += "memory,";
+                if (checkBoxApi.Checked)
+                    dxvk_osd_feature += "api,";
+                if (checkBoxCS.Checked)
+                    dxvk_osd_feature += "cs,";
+                if (checkBoxSamplers.Checked)
+                    dxvk_osd_feature += "samplers,";
+                if (checkBoxScaleX.Checked)
+                    dxvk_osd_feature += "scale=x,";
+                if (checkBoxOpacityY.Checked)
+                    dxvk_osd_feature += "opacity=y,";
+            }
             else
             {
-                File.WriteAllText("dxvk.conf", string.Empty);
-                using (StreamWriter sw = File.AppendText("dxvk.conf"))
+                dxvk_osd_feature += "full";
+            }
+
+
+            /*
+                if (!File.Exists("dxvk.conf"))
                 {
-                    sw.WriteLine("Write some text");
-                   
+
+                    File.Create("dxvk.conf").Close();
+                    using (StreamWriter sw = File.AppendText("dxvk.conf"))
+                    { sw.WriteLine("dxvk.enableAsync=true" +
+                                "\nRADV_PERFTEST = gpl" +
+                                "\ndxvk.gplAsyncCache = true"+aString); 
                     }
-                }
-            */
+                 }
+
+                else
+                {
+                    File.WriteAllText("dxvk.conf", string.Empty);
+                    using (StreamWriter sw = File.AppendText("dxvk.conf"))
+                    {
+                        sw.WriteLine("Write some text");
+
+                        }
+                    }
+                */
             File.Create("dxvk.conf").Close();
             using (StreamWriter sw = File.AppendText("dxvk.conf"))
             {
                 sw.WriteLine("dxvk.enableAsync=true" +
                           "\nRADV_PERFTEST = gpl" +
-                          "\ndxvk.gplAsyncCache = true" + aString);
+                          "\ndxvk.gplAsyncCache = true" + dxvk_osd_feature);
 
             }
 
