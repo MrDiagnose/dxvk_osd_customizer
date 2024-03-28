@@ -16,10 +16,7 @@ namespace dxvk_osd_customizer
         {
             InitializeComponent();
         }
-
-        //if(File.Exists("dxvk.conf"))
-        // {
-        //    
+  
 
         private void buttonCreate_Click(object sender, System.EventArgs e)
         {
