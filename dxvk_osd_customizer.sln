@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.34601.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dxvk_osd_customizer", "dxvk_osd_customizer.csproj", "{F6AEDB6C-115D-41C2-891E-00CD3FDCEFFB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F6AEDB6C-115D-41C2-891E-00CD3FDCEFFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6AEDB6C-115D-41C2-891E-00CD3FDCEFFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6AEDB6C-115D-41C2-891E-00CD3FDCEFFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6AEDB6C-115D-41C2-891E-00CD3FDCEFFB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D8116E58-20A5-4CE7-84D2-9E623EB2633C}
+	EndGlobalSection
+EndGlobal
