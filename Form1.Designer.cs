@@ -49,6 +49,9 @@ namespace dxvk_osd_customizer
             this.toolTipDxvk = new System.Windows.Forms.ToolTip(this.components);
             this.buttonCreate = new System.Windows.Forms.Button();
             this.checkBoxSelectAll = new System.Windows.Forms.CheckBox();
+            this.numericUpDownFrameLimit = new System.Windows.Forms.NumericUpDown();
+            this.checkBoxFrameLimit = new System.Windows.Forms.CheckBox();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownFrameLimit)).BeginInit();
             this.SuspendLayout();
             // 
             // checkBoxDevinfo
@@ -247,11 +250,41 @@ namespace dxvk_osd_customizer
             this.checkBoxSelectAll.Text = "Select All";
             this.checkBoxSelectAll.UseVisualStyleBackColor = true;
             // 
+            // numericUpDownFrameLimit
+            // 
+            this.numericUpDownFrameLimit.Increment = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.numericUpDownFrameLimit.Location = new System.Drawing.Point(292, 106);
+            this.numericUpDownFrameLimit.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.numericUpDownFrameLimit.Name = "numericUpDownFrameLimit";
+            this.numericUpDownFrameLimit.Size = new System.Drawing.Size(120, 20);
+            this.numericUpDownFrameLimit.TabIndex = 20;
+            // 
+            // checkBoxFrameLimit
+            // 
+            this.checkBoxFrameLimit.AutoSize = true;
+            this.checkBoxFrameLimit.Location = new System.Drawing.Point(210, 106);
+            this.checkBoxFrameLimit.Name = "checkBoxFrameLimit";
+            this.checkBoxFrameLimit.Size = new System.Drawing.Size(76, 17);
+            this.checkBoxFrameLimit.TabIndex = 21;
+            this.checkBoxFrameLimit.Text = "FrameLimit";
+            this.toolTipDxvk.SetToolTip(this.checkBoxFrameLimit, "Set Frame Limit 0 means uncapped");
+            this.checkBoxFrameLimit.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(635, 450);
+            this.Controls.Add(this.checkBoxFrameLimit);
+            this.Controls.Add(this.numericUpDownFrameLimit);
             this.Controls.Add(this.checkBoxSelectAll);
             this.Controls.Add(this.buttonCreate);
             this.Controls.Add(this.checkBoxOpacityY);
@@ -272,6 +305,7 @@ namespace dxvk_osd_customizer
             this.Controls.Add(this.checkBoxDevinfo);
             this.Name = "Form1";
             this.Text = "dxvk OSD customizer";
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownFrameLimit)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -298,6 +332,8 @@ namespace dxvk_osd_customizer
         private System.Windows.Forms.ToolTip toolTipDxvk;
         private System.Windows.Forms.Button buttonCreate;
         private System.Windows.Forms.CheckBox checkBoxSelectAll;
+        private System.Windows.Forms.NumericUpDown numericUpDownFrameLimit;
+        private System.Windows.Forms.CheckBox checkBoxFrameLimit;
     }
 }
 

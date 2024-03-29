@@ -62,13 +62,22 @@ namespace dxvk_osd_customizer
                 dxvk_osd_feature += "full";
             }
 
+            string FpsLimit = "";
+            if (checkBoxFrameLimit.Checked)
+            {
+                FpsLimit=numericUpDownFrameLimit.Value.ToString();
+            }
 
             File.Create("dxvk.conf").Close();
             using (StreamWriter sw = File.AppendText("dxvk.conf"))
             {
                 sw.WriteLine("dxvk.enableAsync=true" +
-                          "\nRADV_PERFTEST = gpl" +
-                          "\ndxvk.gplAsyncCache = true" + dxvk_osd_feature);
+                          "\ndxvk.gplAsyncCache=true" + 
+                          dxvk_osd_feature+
+                          "\ndxgi.maxFrameRate="+
+                          FpsLimit+
+                          "\nd3d9.maxFrameRate="+
+                          FpsLimit);
 
             }
 
