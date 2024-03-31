@@ -47,17 +47,18 @@ namespace dxvk_osd_customizer
             this.checkBoxScaleX = new System.Windows.Forms.CheckBox();
             this.checkBoxOpacityY = new System.Windows.Forms.CheckBox();
             this.toolTipDxvk = new System.Windows.Forms.ToolTip(this.components);
+            this.checkBoxFrameLimit = new System.Windows.Forms.CheckBox();
+            this.checkBoxAsync = new System.Windows.Forms.CheckBox();
             this.buttonCreate = new System.Windows.Forms.Button();
             this.checkBoxSelectAll = new System.Windows.Forms.CheckBox();
             this.numericUpDownFrameLimit = new System.Windows.Forms.NumericUpDown();
-            this.checkBoxFrameLimit = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownFrameLimit)).BeginInit();
             this.SuspendLayout();
             // 
             // checkBoxDevinfo
             // 
             this.checkBoxDevinfo.AutoSize = true;
-            this.checkBoxDevinfo.Location = new System.Drawing.Point(46, 44);
+            this.checkBoxDevinfo.Location = new System.Drawing.Point(35, 63);
             this.checkBoxDevinfo.Name = "checkBoxDevinfo";
             this.checkBoxDevinfo.Size = new System.Drawing.Size(61, 17);
             this.checkBoxDevinfo.TabIndex = 0;
@@ -68,7 +69,7 @@ namespace dxvk_osd_customizer
             // checkBoxfps
             // 
             this.checkBoxfps.AutoSize = true;
-            this.checkBoxfps.Location = new System.Drawing.Point(46, 67);
+            this.checkBoxfps.Location = new System.Drawing.Point(35, 86);
             this.checkBoxfps.Name = "checkBoxfps";
             this.checkBoxfps.Size = new System.Drawing.Size(40, 17);
             this.checkBoxfps.TabIndex = 1;
@@ -79,7 +80,7 @@ namespace dxvk_osd_customizer
             // checkBoxGpuload
             // 
             this.checkBoxGpuload.AutoSize = true;
-            this.checkBoxGpuload.Location = new System.Drawing.Point(46, 90);
+            this.checkBoxGpuload.Location = new System.Drawing.Point(35, 109);
             this.checkBoxGpuload.Name = "checkBoxGpuload";
             this.checkBoxGpuload.Size = new System.Drawing.Size(64, 17);
             this.checkBoxGpuload.TabIndex = 2;
@@ -90,7 +91,7 @@ namespace dxvk_osd_customizer
             // checkBoxVersion
             // 
             this.checkBoxVersion.AutoSize = true;
-            this.checkBoxVersion.Location = new System.Drawing.Point(46, 113);
+            this.checkBoxVersion.Location = new System.Drawing.Point(35, 132);
             this.checkBoxVersion.Name = "checkBoxVersion";
             this.checkBoxVersion.Size = new System.Drawing.Size(60, 17);
             this.checkBoxVersion.TabIndex = 3;
@@ -101,7 +102,7 @@ namespace dxvk_osd_customizer
             // checkBoxframetime
             // 
             this.checkBoxframetime.AutoSize = true;
-            this.checkBoxframetime.Location = new System.Drawing.Point(46, 136);
+            this.checkBoxframetime.Location = new System.Drawing.Point(35, 155);
             this.checkBoxframetime.Name = "checkBoxframetime";
             this.checkBoxframetime.Size = new System.Drawing.Size(71, 17);
             this.checkBoxframetime.TabIndex = 4;
@@ -112,7 +113,7 @@ namespace dxvk_osd_customizer
             // checkBoxCompiler
             // 
             this.checkBoxCompiler.AutoSize = true;
-            this.checkBoxCompiler.Location = new System.Drawing.Point(46, 159);
+            this.checkBoxCompiler.Location = new System.Drawing.Point(35, 178);
             this.checkBoxCompiler.Name = "checkBoxCompiler";
             this.checkBoxCompiler.Size = new System.Drawing.Size(65, 17);
             this.checkBoxCompiler.TabIndex = 5;
@@ -123,7 +124,7 @@ namespace dxvk_osd_customizer
             // checkBoxSubmissions
             // 
             this.checkBoxSubmissions.AutoSize = true;
-            this.checkBoxSubmissions.Location = new System.Drawing.Point(46, 182);
+            this.checkBoxSubmissions.Location = new System.Drawing.Point(35, 201);
             this.checkBoxSubmissions.Name = "checkBoxSubmissions";
             this.checkBoxSubmissions.Size = new System.Drawing.Size(82, 17);
             this.checkBoxSubmissions.TabIndex = 6;
@@ -134,7 +135,7 @@ namespace dxvk_osd_customizer
             // checkBoxDrawcalls
             // 
             this.checkBoxDrawcalls.AutoSize = true;
-            this.checkBoxDrawcalls.Location = new System.Drawing.Point(46, 205);
+            this.checkBoxDrawcalls.Location = new System.Drawing.Point(35, 224);
             this.checkBoxDrawcalls.Name = "checkBoxDrawcalls";
             this.checkBoxDrawcalls.Size = new System.Drawing.Size(70, 17);
             this.checkBoxDrawcalls.TabIndex = 7;
@@ -145,7 +146,7 @@ namespace dxvk_osd_customizer
             // checkBoxPipelines
             // 
             this.checkBoxPipelines.AutoSize = true;
-            this.checkBoxPipelines.Location = new System.Drawing.Point(46, 228);
+            this.checkBoxPipelines.Location = new System.Drawing.Point(35, 247);
             this.checkBoxPipelines.Name = "checkBoxPipelines";
             this.checkBoxPipelines.Size = new System.Drawing.Size(67, 17);
             this.checkBoxPipelines.TabIndex = 8;
@@ -156,7 +157,7 @@ namespace dxvk_osd_customizer
             // checkBoxDescriptors
             // 
             this.checkBoxDescriptors.AutoSize = true;
-            this.checkBoxDescriptors.Location = new System.Drawing.Point(46, 251);
+            this.checkBoxDescriptors.Location = new System.Drawing.Point(35, 270);
             this.checkBoxDescriptors.Name = "checkBoxDescriptors";
             this.checkBoxDescriptors.Size = new System.Drawing.Size(77, 17);
             this.checkBoxDescriptors.TabIndex = 9;
@@ -167,7 +168,7 @@ namespace dxvk_osd_customizer
             // checkBoxMemory
             // 
             this.checkBoxMemory.AutoSize = true;
-            this.checkBoxMemory.Location = new System.Drawing.Point(46, 274);
+            this.checkBoxMemory.Location = new System.Drawing.Point(35, 293);
             this.checkBoxMemory.Name = "checkBoxMemory";
             this.checkBoxMemory.Size = new System.Drawing.Size(62, 17);
             this.checkBoxMemory.TabIndex = 10;
@@ -178,7 +179,7 @@ namespace dxvk_osd_customizer
             // checkBoxApi
             // 
             this.checkBoxApi.AutoSize = true;
-            this.checkBoxApi.Location = new System.Drawing.Point(46, 297);
+            this.checkBoxApi.Location = new System.Drawing.Point(35, 316);
             this.checkBoxApi.Name = "checkBoxApi";
             this.checkBoxApi.Size = new System.Drawing.Size(40, 17);
             this.checkBoxApi.TabIndex = 11;
@@ -189,7 +190,7 @@ namespace dxvk_osd_customizer
             // checkBoxCS
             // 
             this.checkBoxCS.AutoSize = true;
-            this.checkBoxCS.Location = new System.Drawing.Point(46, 321);
+            this.checkBoxCS.Location = new System.Drawing.Point(35, 340);
             this.checkBoxCS.Name = "checkBoxCS";
             this.checkBoxCS.Size = new System.Drawing.Size(37, 17);
             this.checkBoxCS.TabIndex = 12;
@@ -200,7 +201,7 @@ namespace dxvk_osd_customizer
             // checkBoxSamplers
             // 
             this.checkBoxSamplers.AutoSize = true;
-            this.checkBoxSamplers.Location = new System.Drawing.Point(46, 344);
+            this.checkBoxSamplers.Location = new System.Drawing.Point(35, 363);
             this.checkBoxSamplers.Name = "checkBoxSamplers";
             this.checkBoxSamplers.Size = new System.Drawing.Size(67, 17);
             this.checkBoxSamplers.TabIndex = 13;
@@ -211,7 +212,7 @@ namespace dxvk_osd_customizer
             // checkBoxScaleX
             // 
             this.checkBoxScaleX.AutoSize = true;
-            this.checkBoxScaleX.Location = new System.Drawing.Point(46, 367);
+            this.checkBoxScaleX.Location = new System.Drawing.Point(35, 386);
             this.checkBoxScaleX.Name = "checkBoxScaleX";
             this.checkBoxScaleX.Size = new System.Drawing.Size(62, 17);
             this.checkBoxScaleX.TabIndex = 14;
@@ -222,13 +223,37 @@ namespace dxvk_osd_customizer
             // checkBoxOpacityY
             // 
             this.checkBoxOpacityY.AutoSize = true;
-            this.checkBoxOpacityY.Location = new System.Drawing.Point(46, 390);
+            this.checkBoxOpacityY.Location = new System.Drawing.Point(35, 409);
             this.checkBoxOpacityY.Name = "checkBoxOpacityY";
             this.checkBoxOpacityY.Size = new System.Drawing.Size(71, 17);
             this.checkBoxOpacityY.TabIndex = 15;
             this.checkBoxOpacityY.Text = "opacity=y";
             this.toolTipDxvk.SetToolTip(this.checkBoxOpacityY, "Adjusts the HUD opacity by a factor of y (e.g. 0.5, 1.0 being fully opaque).");
             this.checkBoxOpacityY.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxFrameLimit
+            // 
+            this.checkBoxFrameLimit.AutoSize = true;
+            this.checkBoxFrameLimit.Location = new System.Drawing.Point(220, 90);
+            this.checkBoxFrameLimit.Name = "checkBoxFrameLimit";
+            this.checkBoxFrameLimit.Size = new System.Drawing.Size(76, 17);
+            this.checkBoxFrameLimit.TabIndex = 21;
+            this.checkBoxFrameLimit.Text = "FrameLimit";
+            this.toolTipDxvk.SetToolTip(this.checkBoxFrameLimit, "Set Frame Limit 0 means uncapped");
+            this.checkBoxFrameLimit.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxAsync
+            // 
+            this.checkBoxAsync.AutoSize = true;
+            this.checkBoxAsync.Checked = true;
+            this.checkBoxAsync.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxAsync.Location = new System.Drawing.Point(35, 40);
+            this.checkBoxAsync.Name = "checkBoxAsync";
+            this.checkBoxAsync.Size = new System.Drawing.Size(54, 17);
+            this.checkBoxAsync.TabIndex = 22;
+            this.checkBoxAsync.Text = "async";
+            this.toolTipDxvk.SetToolTip(this.checkBoxAsync, "disable async");
+            this.checkBoxAsync.UseVisualStyleBackColor = true;
             // 
             // buttonCreate
             // 
@@ -249,6 +274,7 @@ namespace dxvk_osd_customizer
             this.checkBoxSelectAll.TabIndex = 17;
             this.checkBoxSelectAll.Text = "Select All";
             this.checkBoxSelectAll.UseVisualStyleBackColor = true;
+            this.checkBoxSelectAll.CheckedChanged += new System.EventHandler(this.checkBoxSelectAll_CheckedChanged);
             // 
             // numericUpDownFrameLimit
             // 
@@ -257,7 +283,7 @@ namespace dxvk_osd_customizer
             0,
             0,
             0});
-            this.numericUpDownFrameLimit.Location = new System.Drawing.Point(292, 106);
+            this.numericUpDownFrameLimit.Location = new System.Drawing.Point(302, 90);
             this.numericUpDownFrameLimit.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -267,22 +293,12 @@ namespace dxvk_osd_customizer
             this.numericUpDownFrameLimit.Size = new System.Drawing.Size(120, 20);
             this.numericUpDownFrameLimit.TabIndex = 20;
             // 
-            // checkBoxFrameLimit
-            // 
-            this.checkBoxFrameLimit.AutoSize = true;
-            this.checkBoxFrameLimit.Location = new System.Drawing.Point(210, 106);
-            this.checkBoxFrameLimit.Name = "checkBoxFrameLimit";
-            this.checkBoxFrameLimit.Size = new System.Drawing.Size(76, 17);
-            this.checkBoxFrameLimit.TabIndex = 21;
-            this.checkBoxFrameLimit.Text = "FrameLimit";
-            this.toolTipDxvk.SetToolTip(this.checkBoxFrameLimit, "Set Frame Limit 0 means uncapped");
-            this.checkBoxFrameLimit.UseVisualStyleBackColor = true;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(635, 450);
+            this.Controls.Add(this.checkBoxAsync);
             this.Controls.Add(this.checkBoxFrameLimit);
             this.Controls.Add(this.numericUpDownFrameLimit);
             this.Controls.Add(this.checkBoxSelectAll);
@@ -334,6 +350,7 @@ namespace dxvk_osd_customizer
         private System.Windows.Forms.CheckBox checkBoxSelectAll;
         private System.Windows.Forms.NumericUpDown numericUpDownFrameLimit;
         private System.Windows.Forms.CheckBox checkBoxFrameLimit;
+        private System.Windows.Forms.CheckBox checkBoxAsync;
     }
 }
 

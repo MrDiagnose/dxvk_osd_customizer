@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace dxvk_osd_customizer
 {
     public partial class Form1 : Form
@@ -16,12 +17,12 @@ namespace dxvk_osd_customizer
         {
             InitializeComponent();
         }
-  
+        
 
         private void buttonCreate_Click(object sender, System.EventArgs e)
         {
             string dxvk_osd_feature = "\ndxvk.hud=";
-           
+
             if (!checkBoxSelectAll.Checked)
             {
                 if (checkBoxDevinfo.Checked)
@@ -71,7 +72,7 @@ namespace dxvk_osd_customizer
             File.Create("dxvk.conf").Close();
             using (StreamWriter sw = File.AppendText("dxvk.conf"))
             {
-                sw.WriteLine("dxvk.enableAsync=true" +
+                sw.WriteLine("dxvk.enableAsync="+ checkBoxAsync.Checked +
                           "\ndxvk.gplAsyncCache=true" + 
                           dxvk_osd_feature+
                           "\ndxgi.maxFrameRate="+
@@ -81,6 +82,24 @@ namespace dxvk_osd_customizer
 
             }
 
+        }
+
+        private void checkBoxSelectAll_CheckedChanged(object sender, System.EventArgs e)
+        {
+            foreach (Control c in this.Controls)
+            {
+                if (c.GetType() == typeof(CheckBox) & checkBoxSelectAll.Checked == true)
+                {
+                        ((CheckBox)c).Checked = true;
+
+                }
+                else
+                {
+                    if(c.GetType() == typeof(CheckBox)  & (checkBoxSelectAll.Checked == false))
+                        ((CheckBox)c).Checked = false;
+                }
+            }
+                
         }
     }
 }
