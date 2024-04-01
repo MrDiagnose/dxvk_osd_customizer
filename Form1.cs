@@ -35,6 +35,7 @@ namespace dxvk_osd_customizer
         private void listBoxGame_DragDrop(object sender, DragEventArgs e)
         {
             string[] s = (string[])e.Data.GetData(DataFormats.FileDrop, false);
+            Console.WriteLine(s[0]);
             int i;
             for (i = 0; i < s.Length; i++)
                 { 
@@ -44,7 +45,7 @@ namespace dxvk_osd_customizer
                     }
                 else
                 {
-                    MessageBox.Show("Please select and exe file");
+                    MessageBox.Show("Please select an exe file");
                 }
             }
             
@@ -199,6 +200,19 @@ namespace dxvk_osd_customizer
             else
             {
                 MessageBox.Show("Please select game, bit & dxvk");
+            }
+        }
+
+        private void buttonUninstall_Click(object sender, EventArgs e)
+        {
+            string destDir = System.IO.Path.GetDirectoryName(listBoxGame.SelectedItem.ToString());
+            if (listBoxGame.SelectedIndex != -1)
+            {
+                File.Delete(Path.Combine(destDir, "dxvk.conf"));
+                File.Delete(Path.Combine(destDir, "d3d9.dll"));
+                File.Delete(Path.Combine(destDir, "d3d10core.dll"));
+                File.Delete(Path.Combine(destDir, "d3d11.dll"));
+                File.Delete(Path.Combine(destDir, "dxgi.dll"));
             }
         }
     }

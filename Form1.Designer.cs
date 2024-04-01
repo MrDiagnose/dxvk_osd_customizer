@@ -366,6 +366,7 @@ namespace dxvk_osd_customizer
             this.buttonUninstall.TabIndex = 29;
             this.buttonUninstall.Text = "Uninstall";
             this.buttonUninstall.UseVisualStyleBackColor = true;
+            this.buttonUninstall.Click += new System.EventHandler(this.buttonUninstall_Click);
             // 
             // buttonRemove
             // 
