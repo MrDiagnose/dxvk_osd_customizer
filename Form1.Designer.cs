@@ -357,6 +357,7 @@ namespace dxvk_osd_customizer
             this.buttonRun.TabIndex = 28;
             this.buttonRun.Text = "run";
             this.buttonRun.UseVisualStyleBackColor = true;
+            this.buttonRun.Click += new System.EventHandler(this.buttonRun_Click);
             // 
             // buttonUninstall
             // 

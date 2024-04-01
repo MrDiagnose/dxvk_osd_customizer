@@ -215,5 +215,12 @@ namespace dxvk_osd_customizer
                 File.Delete(Path.Combine(destDir, "dxgi.dll"));
             }
         }
+
+        private void buttonRun_Click(object sender, EventArgs e)
+        {
+            string game = listBoxGame.SelectedItem.ToString();
+            if (listBoxGame.SelectedIndex != -1)
+                System.Diagnostics.Process.Start(game);
+        }
     }
 }
