@@ -7,17 +7,51 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using Microsoft.Win32;
+using System;
 
 namespace dxvk_osd_customizer
 {
-    public partial class Form1 : Form
+    public partial class FormDxvk : Form
     {
-        public Form1()
+        public FormDxvk()
         {
             InitializeComponent();
+
+            this.listBoxGame.DragDrop += new
+                DragEventHandler(this.listBoxGame_DragDrop);
+            this.listBoxGame.DragEnter += new
+                DragEventHandler(this.listBoxGame_DragEnter);
         }
-        
+
+        private void listBoxGame_DragEnter(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop))
+                e.Effect = DragDropEffects.All;
+            else
+                e.Effect = DragDropEffects.None;
+        }
+
+        private void listBoxGame_DragDrop(object sender, DragEventArgs e)
+        {
+            string[] s = (string[])e.Data.GetData(DataFormats.FileDrop, false);
+            int i;
+            for (i = 0; i < s.Length; i++)
+                { 
+                if (System.IO.Path.GetExtension(s[i]).Equals(".exe", StringComparison.InvariantCultureIgnoreCase))
+                    {
+                        listBoxGame.Items.Add(s[i]);
+                    }
+                else
+                {
+                    MessageBox.Show("Please select and exe file");
+                }
+            }
+            
+            
+            
+        }
+     
 
         private void buttonCreate_Click(object sender, System.EventArgs e)
         {
@@ -81,7 +115,9 @@ namespace dxvk_osd_customizer
                           FpsLimit);
 
             }
-
+            string destDir = System.IO.Path.GetDirectoryName(listBoxGame.SelectedItem.ToString());
+            if (listBoxGame.SelectedIndex != -1)
+               File.Copy("dxvk.conf", Path.Combine(destDir, "dxvk.conf"), true);
         }
 
         private void checkBoxSelectAll_CheckedChanged(object sender, System.EventArgs e)
@@ -91,7 +127,7 @@ namespace dxvk_osd_customizer
                 if (c.GetType() == typeof(CheckBox) & checkBoxSelectAll.Checked == true)
                 {
                         ((CheckBox)c).Checked = true;
-
+                  
                 }
                 else
                 {
@@ -100,6 +136,70 @@ namespace dxvk_osd_customizer
                 }
             }
                 
+        }
+
+        private void buttonFind_Click(object sender, System.EventArgs e)
+        {
+            /*
+            string registry_key = @"SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall";
+            using (Microsoft.Win32.RegistryKey key = Registry.LocalMachine.OpenSubKey(registry_key))
+            {
+                foreach (string subkey_name in key.GetSubKeyNames())
+                {
+                    using (RegistryKey subkey = key.OpenSubKey(subkey_name))
+                    {
+                        Console.WriteLine(subkey.GetValue("DisplayName"));                 
+                    }
+                }
+            }*/
+        }
+
+        private void buttonRemove_Click(object sender, EventArgs e)
+        {
+                listBoxGame.Items.Remove(listBoxGame.SelectedItem);
+        }
+
+        private void buttonInstall_Click(object sender, EventArgs e)
+        {
+            string dxvkPath = @"dxvk\";
+
+            if ((listBoxGame.SelectedIndex!=-1) & (comboBoxBit.SelectedIndex!=-1) & (comboBoxDxvk.SelectedIndex!=-1))
+            {
+                string dxvkVersion = comboBoxDxvk.SelectedItem.ToString();
+                string bit = comboBoxBit.SelectedItem.ToString();
+                
+                if (bit=="32 bit")
+                {
+                    dxvkPath += dxvkVersion + @"\x32";
+                }
+                else
+                    dxvkPath += dxvkVersion + @"\x64";
+                string sourceDir = dxvkPath;
+                string destDir = System.IO.Path.GetDirectoryName(listBoxGame.SelectedItem.ToString());
+                try
+                {
+                    string[] dxvkFiles = Directory.GetFiles(sourceDir, "*.dll");
+                    foreach (string f in dxvkFiles)
+                    {
+                        // Remove path from the file name.
+                        string fName = f.Substring(sourceDir.Length + 1);
+
+                        // Use the Path.Combine method to safely append the file name to the path.
+                        // Will overwrite if the destination file already exists.
+                        File.Copy(Path.Combine(sourceDir, fName), Path.Combine(destDir, fName), true);
+                    }
+
+                }
+                catch (DirectoryNotFoundException dirNotFound)
+                {
+                    Console.WriteLine(dirNotFound.Message);
+                }
+                File.Copy("dxvk.conf", Path.Combine(destDir,"dxvk.conf"),true);
+            }
+            else
+            {
+                MessageBox.Show("Please select game, bit & dxvk");
+            }
         }
     }
 }
