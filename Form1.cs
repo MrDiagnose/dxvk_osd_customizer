@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.Win32;
 using System;
+using System.Diagnostics;
 
 namespace dxvk_osd_customizer
 {
@@ -22,6 +23,33 @@ namespace dxvk_osd_customizer
                 DragEventHandler(this.listBoxGame_DragDrop);
             this.listBoxGame.DragEnter += new
                 DragEventHandler(this.listBoxGame_DragEnter);
+
+
+            String line;
+            try
+            {
+                StreamReader sr = new StreamReader("game_list.txt");
+                line = sr.ReadLine();
+                while (line != null)
+                {
+
+                    listBoxGame.Items.Add(line);
+                    line = sr.ReadLine();
+                }
+                sr.Close();
+                Console.ReadLine();
+            }
+            catch (Exception hey)
+            {
+                Console.WriteLine("Exceeption: " + hey.Message);
+            }
+            finally
+            {
+                Console.WriteLine("finally");
+            }
+
+
+
         }
 
         private void listBoxGame_DragEnter(object sender, DragEventArgs e)
@@ -35,7 +63,7 @@ namespace dxvk_osd_customizer
         private void listBoxGame_DragDrop(object sender, DragEventArgs e)
         {
             string[] s = (string[])e.Data.GetData(DataFormats.FileDrop, false);
-            Console.WriteLine(s[0]);
+            //Console.WriteLine(s[0]);
             int i;
             for (i = 0; i < s.Length; i++)
                 { 
@@ -218,9 +246,65 @@ namespace dxvk_osd_customizer
 
         private void buttonRun_Click(object sender, EventArgs e)
         {
-            string game = listBoxGame.SelectedItem.ToString();
+            /*
+            string game = "\""+listBoxGame.SelectedItem.ToString()+"\"";
+            Console.WriteLine(game);
             if (listBoxGame.SelectedIndex != -1)
                 System.Diagnostics.Process.Start(game);
+            //not working as intended
+             */
+
+            
+        }
+
+        private void buttonSaveList_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                StreamWriter sw = new StreamWriter("game_list.txt");
+                foreach (string s in listBoxGame.Items)
+                {
+                    sw.WriteLine(s);
+                    Console.WriteLine(s);
+                }
+                sw.Close();
+                
+            }
+            catch (Exception heyoooo)
+            {
+                Console.WriteLine("Exception: " + heyoooo.Message);
+            }
+            finally
+            {
+                Console.WriteLine("Executing finally block.");
+            }
+        }
+
+        private void buttonLoadList_Click(object sender, EventArgs e)
+        {
+            String line;
+            try
+            {
+                StreamReader sr = new StreamReader("game_list.txt");
+                line = sr.ReadLine();
+                while (line != null)
+                {
+                    
+                    listBoxGame.Items.Add(line);
+                    line = sr.ReadLine();
+                }
+                sr.Close();
+                Console.ReadLine();
+            }
+            catch (Exception hey)
+            {
+                Console.WriteLine("Exceeption: " + hey.Message);
+            }
+            finally
+            {
+                Console.WriteLine("finally");
+            }
+            
         }
     }
 }
