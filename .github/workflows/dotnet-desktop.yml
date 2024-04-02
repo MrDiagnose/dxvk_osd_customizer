@@ -80,8 +80,17 @@ jobs:
     # Add  MSBuild to the PATH: https://github.com/microsoft/setup-msbuild
    # - name: Setup MSBuild.exe
     #  uses: microsoft/setup-msbuild@v2
-    - name: Build solution (NET Framework)
-      run: msbuild dxvk_osd_customizer.sln /p:Configuration=Debug
+   # - name: Build solution (NET Framework)
+     # run: msbuild dxvk_osd_customizer.sln /p:Configuration=Debug
+    - name: Configure CMake
+      shell: bash
+      working-directory: ${{github.workspace}}/build
+      run: cmake $GITHUB_WORKSPACE -G "Visual Studio 16 2019" -A x64 -DCMAKE_BUILD_TYPE=$BUILD_TYPE -DBUILD_UNIT_TESTS=ON -DSHARED_SFML=OFF
+
+    - name: Build
+      working-directory: ${{github.workspace}}/build
+      shell: bash
+      run: cmake --build . --config $BUILD_TYPE
 
     # Execute all unit tests in the solution
   #  - name: Execute unit tests
