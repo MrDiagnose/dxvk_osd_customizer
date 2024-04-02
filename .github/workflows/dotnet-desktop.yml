@@ -88,7 +88,7 @@ jobs:
       run: cmake $GITHUB_WORKSPACE -G "Visual Studio 16 2019" -A x64 -DCMAKE_BUILD_TYPE=$BUILD_TYPE -DBUILD_UNIT_TESTS=ON -DSHARED_SFML=OFF
 
     - name: Build
-      working-directory: ${{github.workspace}}\build
+      working-directory: ${{github.workspace}}/build
       shell: bash
       run: cmake --build . --config $BUILD_TYPE
 
