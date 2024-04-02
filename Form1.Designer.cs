@@ -52,15 +52,15 @@ namespace dxvk_osd_customizer
             this.buttonRun = new System.Windows.Forms.Button();
             this.buttonSaveList = new System.Windows.Forms.Button();
             this.buttonCreate = new System.Windows.Forms.Button();
+            this.buttonInstall = new System.Windows.Forms.Button();
+            this.buttonUninstall = new System.Windows.Forms.Button();
+            this.buttonRemove = new System.Windows.Forms.Button();
             this.checkBoxSelectAll = new System.Windows.Forms.CheckBox();
             this.numericUpDownFrameLimit = new System.Windows.Forms.NumericUpDown();
-            this.buttonInstall = new System.Windows.Forms.Button();
             this.comboBoxDxvk = new System.Windows.Forms.ComboBox();
             this.comboBoxBit = new System.Windows.Forms.ComboBox();
             this.openFileDialogGame = new System.Windows.Forms.OpenFileDialog();
             this.listBoxGame = new System.Windows.Forms.ListBox();
-            this.buttonUninstall = new System.Windows.Forms.Button();
-            this.buttonRemove = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownFrameLimit)).BeginInit();
             this.SuspendLayout();
             // 
@@ -297,6 +297,39 @@ namespace dxvk_osd_customizer
             this.buttonCreate.UseVisualStyleBackColor = true;
             this.buttonCreate.Click += new System.EventHandler(this.buttonCreate_Click);
             // 
+            // buttonInstall
+            // 
+            this.buttonInstall.Location = new System.Drawing.Point(484, 263);
+            this.buttonInstall.Name = "buttonInstall";
+            this.buttonInstall.Size = new System.Drawing.Size(75, 23);
+            this.buttonInstall.TabIndex = 24;
+            this.buttonInstall.Text = "Install";
+            this.toolTipDxvk.SetToolTip(this.buttonInstall, "install dxvk");
+            this.buttonInstall.UseVisualStyleBackColor = true;
+            this.buttonInstall.Click += new System.EventHandler(this.buttonInstall_Click);
+            // 
+            // buttonUninstall
+            // 
+            this.buttonUninstall.Location = new System.Drawing.Point(484, 292);
+            this.buttonUninstall.Name = "buttonUninstall";
+            this.buttonUninstall.Size = new System.Drawing.Size(75, 23);
+            this.buttonUninstall.TabIndex = 29;
+            this.buttonUninstall.Text = "Uninstall";
+            this.toolTipDxvk.SetToolTip(this.buttonUninstall, "remove dxvk");
+            this.buttonUninstall.UseVisualStyleBackColor = true;
+            this.buttonUninstall.Click += new System.EventHandler(this.buttonUninstall_Click);
+            // 
+            // buttonRemove
+            // 
+            this.buttonRemove.Location = new System.Drawing.Point(485, 205);
+            this.buttonRemove.Name = "buttonRemove";
+            this.buttonRemove.Size = new System.Drawing.Size(72, 23);
+            this.buttonRemove.TabIndex = 30;
+            this.buttonRemove.Text = "Remove Game";
+            this.toolTipDxvk.SetToolTip(this.buttonRemove, "remove selected item");
+            this.buttonRemove.UseVisualStyleBackColor = true;
+            this.buttonRemove.Click += new System.EventHandler(this.buttonRemove_Click);
+            // 
             // checkBoxSelectAll
             // 
             this.checkBoxSelectAll.AutoSize = true;
@@ -325,17 +358,6 @@ namespace dxvk_osd_customizer
             this.numericUpDownFrameLimit.Size = new System.Drawing.Size(120, 20);
             this.numericUpDownFrameLimit.TabIndex = 20;
             // 
-            // buttonInstall
-            // 
-            this.buttonInstall.Location = new System.Drawing.Point(484, 263);
-            this.buttonInstall.Name = "buttonInstall";
-            this.buttonInstall.Size = new System.Drawing.Size(75, 23);
-            this.buttonInstall.TabIndex = 24;
-            this.buttonInstall.Text = "Install";
-            this.toolTipDxvk.SetToolTip(this.buttonInstall, "install dxvk");
-            this.buttonInstall.UseVisualStyleBackColor = true;
-            this.buttonInstall.Click += new System.EventHandler(this.buttonInstall_Click);
-            // 
             // comboBoxDxvk
             // 
             this.comboBoxDxvk.FormattingEnabled = true;
@@ -347,6 +369,7 @@ namespace dxvk_osd_customizer
             this.comboBoxDxvk.Size = new System.Drawing.Size(121, 21);
             this.comboBoxDxvk.TabIndex = 25;
             this.comboBoxDxvk.Text = "Dxvk version";
+            this.toolTipDxvk.SetToolTip(this.comboBoxDxvk, "Select dxvk / dxvk-async");
             // 
             // comboBoxBit
             // 
@@ -372,28 +395,6 @@ namespace dxvk_osd_customizer
             this.listBoxGame.Name = "listBoxGame";
             this.listBoxGame.Size = new System.Drawing.Size(444, 173);
             this.listBoxGame.TabIndex = 27;
-            // 
-            // buttonUninstall
-            // 
-            this.buttonUninstall.Location = new System.Drawing.Point(484, 292);
-            this.buttonUninstall.Name = "buttonUninstall";
-            this.buttonUninstall.Size = new System.Drawing.Size(75, 23);
-            this.buttonUninstall.TabIndex = 29;
-            this.buttonUninstall.Text = "Uninstall";
-            this.toolTipDxvk.SetToolTip(this.buttonUninstall, "remove dxvk");
-            this.buttonUninstall.UseVisualStyleBackColor = true;
-            this.buttonUninstall.Click += new System.EventHandler(this.buttonUninstall_Click);
-            // 
-            // buttonRemove
-            // 
-            this.buttonRemove.Location = new System.Drawing.Point(485, 205);
-            this.buttonRemove.Name = "buttonRemove";
-            this.buttonRemove.Size = new System.Drawing.Size(72, 23);
-            this.buttonRemove.TabIndex = 30;
-            this.buttonRemove.Text = "Remove Game";
-            this.toolTipDxvk.SetToolTip(this.buttonRemove, "remove selected item");
-            this.buttonRemove.UseVisualStyleBackColor = true;
-            this.buttonRemove.Click += new System.EventHandler(this.buttonRemove_Click);
             // 
             // FormDxvk
             // 

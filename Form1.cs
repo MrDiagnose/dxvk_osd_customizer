@@ -47,6 +47,11 @@ namespace dxvk_osd_customizer
             {
                 Console.WriteLine("finally");
             }
+            comboBoxDxvk.SelectedItem ="dxvk-async"; //set default dxvk type
+            comboBoxBit.SelectedItem = "64 bit"; //set default bit
+            if (listBoxGame.Items.Count>0)
+              listBoxGame.SelectedIndex = 0;//select 1st item
+
 
 
 
@@ -142,11 +147,17 @@ namespace dxvk_osd_customizer
                           FpsLimit+
                           "\nd3d9.maxFrameRate="+
                           FpsLimit);
+                sw.Close();
 
             }
-            string destDir = System.IO.Path.GetDirectoryName(listBoxGame.SelectedItem.ToString());
-            if (listBoxGame.SelectedIndex != -1)
-               File.Copy("dxvk.conf", Path.Combine(destDir, "dxvk.conf"), true);
+
+                String destDir ="";
+
+            if (listBoxGame.Items.Count > 0)
+            {
+                destDir = System.IO.Path.GetDirectoryName(listBoxGame.SelectedItem.ToString());
+                File.Copy("dxvk.conf", Path.Combine(destDir, "dxvk.conf"), true);
+            }
         }
 
         private void checkBoxSelectAll_CheckedChanged(object sender, System.EventArgs e)
