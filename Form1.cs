@@ -159,25 +159,7 @@ namespace dxvk_osd_customizer
                 File.Copy("dxvk.conf", Path.Combine(destDir, "dxvk.conf"), true);
             }
         }
-
-        private void checkBoxSelectAll_CheckedChanged(object sender, System.EventArgs e)
-        {
-            foreach (Control c in this.Controls)
-            {
-                if (c.GetType() == typeof(CheckBox) & checkBoxSelectAll.Checked == true)
-                {
-                        ((CheckBox)c).Checked = true;
-                  
-                }
-                else
-                {
-                    if(c.GetType() == typeof(CheckBox)  & (checkBoxSelectAll.Checked == false))
-                        ((CheckBox)c).Checked = false;
-                }
-            }
-                
-        }
-
+        
         private void buttonFind_Click(object sender, System.EventArgs e)
         {
             /*
@@ -316,6 +298,31 @@ namespace dxvk_osd_customizer
                 Console.WriteLine("finally");
             }
             
+        }
+
+        private void checkBoxSelectAll_CheckedChanged_1(object sender, EventArgs e)
+        {
+            foreach (CheckBox c in groupBoxBasic.Controls.OfType<CheckBox>())
+            {
+                if (checkBoxSelectAll.Checked)
+                    c.Checked = true;
+                else
+                    c.Checked = false;
+            }
+            foreach (CheckBox c in groupBoxAdvanced.Controls.OfType<CheckBox>())
+            {
+                if (checkBoxSelectAll.Checked)
+                    c.Checked = true;
+                else
+                    c.Checked = false;
+            }
+            foreach (CheckBox c in groupBoxHudSize.Controls.OfType<CheckBox>())
+            {
+                if (checkBoxSelectAll.Checked)
+                    c.Checked = true;
+                else
+                    c.Checked = false;
+            }
         }
     }
 }
