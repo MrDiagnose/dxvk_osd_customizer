@@ -30,6 +30,7 @@ namespace dxvk_osd_customizer
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDxvk));
             this.checkBoxfps = new System.Windows.Forms.CheckBox();
             this.toolTipDxvk = new System.Windows.Forms.ToolTip(this.components);
             this.buttonRun = new System.Windows.Forms.Button();
@@ -39,8 +40,6 @@ namespace dxvk_osd_customizer
             this.buttonUninstall = new System.Windows.Forms.Button();
             this.buttonRemove = new System.Windows.Forms.Button();
             this.comboBoxDxvk = new System.Windows.Forms.ComboBox();
-            this.comboBoxBit = new System.Windows.Forms.ComboBox();
-            this.openFileDialogGame = new System.Windows.Forms.OpenFileDialog();
             this.listBoxGame = new System.Windows.Forms.ListBox();
             this.checkBoxSamplers = new System.Windows.Forms.CheckBox();
             this.checkBoxCS = new System.Windows.Forms.CheckBox();
@@ -53,27 +52,38 @@ namespace dxvk_osd_customizer
             this.checkBoxCompiler = new System.Windows.Forms.CheckBox();
             this.checkBoxVersion = new System.Windows.Forms.CheckBox();
             this.checkBoxGpuload = new System.Windows.Forms.CheckBox();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.checkBoxScaleX = new System.Windows.Forms.CheckBox();
-            this.checkBoxSelectAll = new System.Windows.Forms.CheckBox();
             this.checkBoxOpacityY = new System.Windows.Forms.CheckBox();
             this.checkBoxframetime = new System.Windows.Forms.CheckBox();
             this.checkBoxFrameLimit = new System.Windows.Forms.CheckBox();
-            this.numericUpDownFrameLimit = new System.Windows.Forms.NumericUpDown();
             this.checkBoxDevinfo = new System.Windows.Forms.CheckBox();
             this.checkBoxAsync = new System.Windows.Forms.CheckBox();
-            this.groupBoxBasic = new System.Windows.Forms.GroupBox();
-            this.groupBoxAdvanced = new System.Windows.Forms.GroupBox();
+            this.comboBoxBit = new System.Windows.Forms.ComboBox();
+            this.openFileDialogGame = new System.Windows.Forms.OpenFileDialog();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBoxHudSize = new System.Windows.Forms.GroupBox();
+            this.checkBoxSelectAll = new System.Windows.Forms.CheckBox();
+            this.groupBoxAdvanced = new System.Windows.Forms.GroupBox();
+            this.groupBoxBasic = new System.Windows.Forms.GroupBox();
+            this.numericUpDownFrameLimit = new System.Windows.Forms.NumericUpDown();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.label2 = new System.Windows.Forms.Label();
+            this.linkLabelYoutubeCoding = new System.Windows.Forms.LinkLabel();
+            this.linkLabelYoutubeGaming = new System.Windows.Forms.LinkLabel();
+            this.linkLabelDiscord = new System.Windows.Forms.LinkLabel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.linkLabelSource = new System.Windows.Forms.LinkLabel();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownFrameLimit)).BeginInit();
-            this.groupBoxBasic.SuspendLayout();
-            this.groupBoxAdvanced.SuspendLayout();
             this.groupBoxHudSize.SuspendLayout();
+            this.groupBoxAdvanced.SuspendLayout();
+            this.groupBoxBasic.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownFrameLimit)).BeginInit();
+            this.tabPage2.SuspendLayout();
+            this.tabPage3.SuspendLayout();
             this.SuspendLayout();
             // 
             // checkBoxfps
@@ -165,22 +175,6 @@ namespace dxvk_osd_customizer
             this.comboBoxDxvk.TabIndex = 25;
             this.comboBoxDxvk.Text = "Dxvk version";
             this.toolTipDxvk.SetToolTip(this.comboBoxDxvk, "Select dxvk / dxvk-async");
-            // 
-            // comboBoxBit
-            // 
-            this.comboBoxBit.FormattingEnabled = true;
-            this.comboBoxBit.Items.AddRange(new object[] {
-            "32 bit",
-            "64 bit"});
-            this.comboBoxBit.Location = new System.Drawing.Point(141, 178);
-            this.comboBoxBit.Name = "comboBoxBit";
-            this.comboBoxBit.Size = new System.Drawing.Size(52, 21);
-            this.comboBoxBit.TabIndex = 26;
-            this.comboBoxBit.Text = "Bit";
-            // 
-            // openFileDialogGame
-            // 
-            this.openFileDialogGame.FileName = "openFileDialog1";
             // 
             // listBoxGame
             // 
@@ -314,49 +308,6 @@ namespace dxvk_osd_customizer
             this.toolTipDxvk.SetToolTip(this.checkBoxGpuload, "Shows estimated GPU load. May be inaccurate.");
             this.checkBoxGpuload.UseVisualStyleBackColor = true;
             // 
-            // tabControl1
-            // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(12, 27);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(478, 263);
-            this.tabControl1.TabIndex = 33;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Controls.Add(this.buttonCreate);
-            this.tabPage1.Controls.Add(this.groupBoxHudSize);
-            this.tabPage1.Controls.Add(this.checkBoxSelectAll);
-            this.tabPage1.Controls.Add(this.groupBoxAdvanced);
-            this.tabPage1.Controls.Add(this.groupBoxBasic);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(470, 237);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Dxvk.conf";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.listBoxGame);
-            this.tabPage2.Controls.Add(this.buttonSaveList);
-            this.tabPage2.Controls.Add(this.buttonRemove);
-            this.tabPage2.Controls.Add(this.buttonInstall);
-            this.tabPage2.Controls.Add(this.buttonUninstall);
-            this.tabPage2.Controls.Add(this.comboBoxDxvk);
-            this.tabPage2.Controls.Add(this.buttonRun);
-            this.tabPage2.Controls.Add(this.comboBoxBit);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(470, 237);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "dxvk";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
             // checkBoxScaleX
             // 
             this.checkBoxScaleX.AutoSize = true;
@@ -367,17 +318,6 @@ namespace dxvk_osd_customizer
             this.checkBoxScaleX.Text = "scale=x";
             this.toolTipDxvk.SetToolTip(this.checkBoxScaleX, "Scales the HUD by a factor of x (e.g. 1.5)");
             this.checkBoxScaleX.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxSelectAll
-            // 
-            this.checkBoxSelectAll.AutoSize = true;
-            this.checkBoxSelectAll.Location = new System.Drawing.Point(132, 202);
-            this.checkBoxSelectAll.Name = "checkBoxSelectAll";
-            this.checkBoxSelectAll.Size = new System.Drawing.Size(70, 17);
-            this.checkBoxSelectAll.TabIndex = 37;
-            this.checkBoxSelectAll.Text = "Select All";
-            this.checkBoxSelectAll.UseVisualStyleBackColor = true;
-            this.checkBoxSelectAll.CheckedChanged += new System.EventHandler(this.checkBoxSelectAll_CheckedChanged_1);
             // 
             // checkBoxOpacityY
             // 
@@ -412,23 +352,6 @@ namespace dxvk_osd_customizer
             this.toolTipDxvk.SetToolTip(this.checkBoxFrameLimit, "Set Frame Limit 0 means uncapped");
             this.checkBoxFrameLimit.UseVisualStyleBackColor = true;
             // 
-            // numericUpDownFrameLimit
-            // 
-            this.numericUpDownFrameLimit.Increment = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.numericUpDownFrameLimit.Location = new System.Drawing.Point(91, 85);
-            this.numericUpDownFrameLimit.Maximum = new decimal(new int[] {
-            1000,
-            0,
-            0,
-            0});
-            this.numericUpDownFrameLimit.Name = "numericUpDownFrameLimit";
-            this.numericUpDownFrameLimit.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDownFrameLimit.TabIndex = 38;
-            // 
             // checkBoxDevinfo
             // 
             this.checkBoxDevinfo.AutoSize = true;
@@ -453,6 +376,85 @@ namespace dxvk_osd_customizer
             this.toolTipDxvk.SetToolTip(this.checkBoxAsync, "disable async");
             this.checkBoxAsync.UseVisualStyleBackColor = true;
             // 
+            // comboBoxBit
+            // 
+            this.comboBoxBit.FormattingEnabled = true;
+            this.comboBoxBit.Items.AddRange(new object[] {
+            "32 bit",
+            "64 bit"});
+            this.comboBoxBit.Location = new System.Drawing.Point(141, 178);
+            this.comboBoxBit.Name = "comboBoxBit";
+            this.comboBoxBit.Size = new System.Drawing.Size(52, 21);
+            this.comboBoxBit.TabIndex = 26;
+            this.comboBoxBit.Text = "Bit";
+            // 
+            // openFileDialogGame
+            // 
+            this.openFileDialogGame.FileName = "openFileDialog1";
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Location = new System.Drawing.Point(12, 27);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(478, 263);
+            this.tabControl1.TabIndex = 33;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.buttonCreate);
+            this.tabPage1.Controls.Add(this.groupBoxHudSize);
+            this.tabPage1.Controls.Add(this.checkBoxSelectAll);
+            this.tabPage1.Controls.Add(this.groupBoxAdvanced);
+            this.tabPage1.Controls.Add(this.groupBoxBasic);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(470, 237);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Dxvk.conf";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // groupBoxHudSize
+            // 
+            this.groupBoxHudSize.Controls.Add(this.checkBoxScaleX);
+            this.groupBoxHudSize.Controls.Add(this.checkBoxOpacityY);
+            this.groupBoxHudSize.Location = new System.Drawing.Point(258, 119);
+            this.groupBoxHudSize.Name = "groupBoxHudSize";
+            this.groupBoxHudSize.Size = new System.Drawing.Size(184, 48);
+            this.groupBoxHudSize.TabIndex = 42;
+            this.groupBoxHudSize.TabStop = false;
+            this.groupBoxHudSize.Text = "Hud Size";
+            // 
+            // checkBoxSelectAll
+            // 
+            this.checkBoxSelectAll.AutoSize = true;
+            this.checkBoxSelectAll.Location = new System.Drawing.Point(132, 202);
+            this.checkBoxSelectAll.Name = "checkBoxSelectAll";
+            this.checkBoxSelectAll.Size = new System.Drawing.Size(70, 17);
+            this.checkBoxSelectAll.TabIndex = 37;
+            this.checkBoxSelectAll.Text = "Select All";
+            this.checkBoxSelectAll.UseVisualStyleBackColor = true;
+            this.checkBoxSelectAll.CheckedChanged += new System.EventHandler(this.checkBoxSelectAll_CheckedChanged_1);
+            // 
+            // groupBoxAdvanced
+            // 
+            this.groupBoxAdvanced.Controls.Add(this.checkBoxPipelines);
+            this.groupBoxAdvanced.Controls.Add(this.checkBoxDescriptors);
+            this.groupBoxAdvanced.Controls.Add(this.checkBoxDrawcalls);
+            this.groupBoxAdvanced.Controls.Add(this.checkBoxCS);
+            this.groupBoxAdvanced.Controls.Add(this.checkBoxSubmissions);
+            this.groupBoxAdvanced.Controls.Add(this.checkBoxSamplers);
+            this.groupBoxAdvanced.Location = new System.Drawing.Point(258, 23);
+            this.groupBoxAdvanced.Name = "groupBoxAdvanced";
+            this.groupBoxAdvanced.Size = new System.Drawing.Size(184, 90);
+            this.groupBoxAdvanced.TabIndex = 41;
+            this.groupBoxAdvanced.TabStop = false;
+            this.groupBoxAdvanced.Text = "Advanced";
+            // 
             // groupBoxBasic
             // 
             this.groupBoxBasic.Controls.Add(this.checkBoxAsync);
@@ -473,31 +475,127 @@ namespace dxvk_osd_customizer
             this.groupBoxBasic.TabStop = false;
             this.groupBoxBasic.Text = "Basic";
             // 
-            // groupBoxAdvanced
+            // numericUpDownFrameLimit
             // 
-            this.groupBoxAdvanced.Controls.Add(this.checkBoxPipelines);
-            this.groupBoxAdvanced.Controls.Add(this.checkBoxDescriptors);
-            this.groupBoxAdvanced.Controls.Add(this.checkBoxDrawcalls);
-            this.groupBoxAdvanced.Controls.Add(this.checkBoxCS);
-            this.groupBoxAdvanced.Controls.Add(this.checkBoxSubmissions);
-            this.groupBoxAdvanced.Controls.Add(this.checkBoxSamplers);
-            this.groupBoxAdvanced.Location = new System.Drawing.Point(258, 23);
-            this.groupBoxAdvanced.Name = "groupBoxAdvanced";
-            this.groupBoxAdvanced.Size = new System.Drawing.Size(184, 90);
-            this.groupBoxAdvanced.TabIndex = 41;
-            this.groupBoxAdvanced.TabStop = false;
-            this.groupBoxAdvanced.Text = "Advanced";
+            this.numericUpDownFrameLimit.Increment = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.numericUpDownFrameLimit.Location = new System.Drawing.Point(91, 85);
+            this.numericUpDownFrameLimit.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.numericUpDownFrameLimit.Name = "numericUpDownFrameLimit";
+            this.numericUpDownFrameLimit.Size = new System.Drawing.Size(120, 20);
+            this.numericUpDownFrameLimit.TabIndex = 38;
             // 
-            // groupBoxHudSize
+            // tabPage2
             // 
-            this.groupBoxHudSize.Controls.Add(this.checkBoxScaleX);
-            this.groupBoxHudSize.Controls.Add(this.checkBoxOpacityY);
-            this.groupBoxHudSize.Location = new System.Drawing.Point(258, 119);
-            this.groupBoxHudSize.Name = "groupBoxHudSize";
-            this.groupBoxHudSize.Size = new System.Drawing.Size(184, 48);
-            this.groupBoxHudSize.TabIndex = 42;
-            this.groupBoxHudSize.TabStop = false;
-            this.groupBoxHudSize.Text = "Hud Size";
+            this.tabPage2.Controls.Add(this.listBoxGame);
+            this.tabPage2.Controls.Add(this.buttonSaveList);
+            this.tabPage2.Controls.Add(this.buttonRemove);
+            this.tabPage2.Controls.Add(this.buttonInstall);
+            this.tabPage2.Controls.Add(this.buttonUninstall);
+            this.tabPage2.Controls.Add(this.comboBoxDxvk);
+            this.tabPage2.Controls.Add(this.buttonRun);
+            this.tabPage2.Controls.Add(this.comboBoxBit);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(470, 237);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "dxvk";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.label2);
+            this.tabPage3.Controls.Add(this.linkLabelYoutubeCoding);
+            this.tabPage3.Controls.Add(this.linkLabelYoutubeGaming);
+            this.tabPage3.Controls.Add(this.linkLabelDiscord);
+            this.tabPage3.Controls.Add(this.label3);
+            this.tabPage3.Controls.Add(this.label1);
+            this.tabPage3.Controls.Add(this.linkLabelSource);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(470, 237);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "about";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(24, 106);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(50, 13);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Youtube:";
+            // 
+            // linkLabelYoutubeCoding
+            // 
+            this.linkLabelYoutubeCoding.AutoSize = true;
+            this.linkLabelYoutubeCoding.Location = new System.Drawing.Point(80, 133);
+            this.linkLabelYoutubeCoding.Name = "linkLabelYoutubeCoding";
+            this.linkLabelYoutubeCoding.Size = new System.Drawing.Size(228, 13);
+            this.linkLabelYoutubeCoding.TabIndex = 6;
+            this.linkLabelYoutubeCoding.TabStop = true;
+            this.linkLabelYoutubeCoding.Text = "https://www.youtube.com/@johndrippercodes";
+            this.linkLabelYoutubeCoding.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelYoutubeCoding_LinkClicked);
+            // 
+            // linkLabelYoutubeGaming
+            // 
+            this.linkLabelYoutubeGaming.AutoSize = true;
+            this.linkLabelYoutubeGaming.Location = new System.Drawing.Point(80, 106);
+            this.linkLabelYoutubeGaming.Name = "linkLabelYoutubeGaming";
+            this.linkLabelYoutubeGaming.Size = new System.Drawing.Size(233, 13);
+            this.linkLabelYoutubeGaming.TabIndex = 5;
+            this.linkLabelYoutubeGaming.TabStop = true;
+            this.linkLabelYoutubeGaming.Text = "https://www.youtube.com/@johndrippergaming";
+            this.linkLabelYoutubeGaming.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelYoutubeGaming_LinkClicked);
+            // 
+            // linkLabelDiscord
+            // 
+            this.linkLabelDiscord.AutoSize = true;
+            this.linkLabelDiscord.Location = new System.Drawing.Point(80, 187);
+            this.linkLabelDiscord.Name = "linkLabelDiscord";
+            this.linkLabelDiscord.Size = new System.Drawing.Size(191, 13);
+            this.linkLabelDiscord.TabIndex = 4;
+            this.linkLabelDiscord.TabStop = true;
+            this.linkLabelDiscord.Text = "https://discord.com/invite/fpUaAfyxxR";
+            this.linkLabelDiscord.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelDiscord_LinkClicked);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(24, 187);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(46, 13);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Discord:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(24, 33);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(44, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Source:";
+            // 
+            // linkLabelSource
+            // 
+            this.linkLabelSource.AutoSize = true;
+            this.linkLabelSource.Location = new System.Drawing.Point(80, 33);
+            this.linkLabelSource.Name = "linkLabelSource";
+            this.linkLabelSource.Size = new System.Drawing.Size(264, 13);
+            this.linkLabelSource.TabIndex = 0;
+            this.linkLabelSource.TabStop = true;
+            this.linkLabelSource.Text = "https://github.com/MrDiagnose/dxvk_osd_customizer";
+            this.linkLabelSource.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelSource_LinkClicked);
             // 
             // FormDxvk
             // 
@@ -505,20 +603,24 @@ namespace dxvk_osd_customizer
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(497, 303);
             this.Controls.Add(this.tabControl1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "FormDxvk";
             this.Text = "dxvk OSD customizer 1.0";
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            this.tabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownFrameLimit)).EndInit();
-            this.groupBoxBasic.ResumeLayout(false);
-            this.groupBoxBasic.PerformLayout();
-            this.groupBoxAdvanced.ResumeLayout(false);
-            this.groupBoxAdvanced.PerformLayout();
             this.groupBoxHudSize.ResumeLayout(false);
             this.groupBoxHudSize.PerformLayout();
+            this.groupBoxAdvanced.ResumeLayout(false);
+            this.groupBoxAdvanced.PerformLayout();
+            this.groupBoxBasic.ResumeLayout(false);
+            this.groupBoxBasic.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownFrameLimit)).EndInit();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -561,6 +663,14 @@ namespace dxvk_osd_customizer
         private System.Windows.Forms.GroupBox groupBoxBasic;
         private System.Windows.Forms.GroupBox groupBoxAdvanced;
         private System.Windows.Forms.GroupBox groupBoxHudSize;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.LinkLabel linkLabelYoutubeCoding;
+        private System.Windows.Forms.LinkLabel linkLabelYoutubeGaming;
+        private System.Windows.Forms.LinkLabel linkLabelDiscord;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.LinkLabel linkLabelSource;
     }
 }
 

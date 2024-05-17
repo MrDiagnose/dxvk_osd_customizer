@@ -324,5 +324,26 @@ namespace dxvk_osd_customizer
                     c.Checked = false;
             }
         }
+
+        private void linkLabelSource_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://github.com/MrDiagnose/dxvk_osd_customizer");
+        }
+
+        private void linkLabelYoutubeGaming_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://www.youtube.com/@johndrippergaming");
+        }
+
+        private void linkLabelYoutubeCoding_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://www.youtube.com/@johndrippercodes"); 
+
+        }
+
+        private void linkLabelDiscord_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://discord.com/invite/fpUaAfyxxR");
+        }
     }
 }
