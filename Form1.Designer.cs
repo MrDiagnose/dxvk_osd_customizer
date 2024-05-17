@@ -76,6 +76,9 @@ namespace dxvk_osd_customizer
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.linkLabelSource = new System.Windows.Forms.LinkLabel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.linkLabelDXVK = new System.Windows.Forms.LinkLabel();
+            this.linkLabelDXVKAsync = new System.Windows.Forms.LinkLabel();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBoxHudSize.SuspendLayout();
@@ -512,6 +515,9 @@ namespace dxvk_osd_customizer
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.linkLabelDXVKAsync);
+            this.tabPage3.Controls.Add(this.linkLabelDXVK);
+            this.tabPage3.Controls.Add(this.label4);
             this.tabPage3.Controls.Add(this.label2);
             this.tabPage3.Controls.Add(this.linkLabelYoutubeCoding);
             this.tabPage3.Controls.Add(this.linkLabelYoutubeGaming);
@@ -523,13 +529,13 @@ namespace dxvk_osd_customizer
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Size = new System.Drawing.Size(470, 237);
             this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "about";
+            this.tabPage3.Text = "About";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(24, 106);
+            this.label2.Location = new System.Drawing.Point(29, 149);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(50, 13);
             this.label2.TabIndex = 7;
@@ -538,7 +544,7 @@ namespace dxvk_osd_customizer
             // linkLabelYoutubeCoding
             // 
             this.linkLabelYoutubeCoding.AutoSize = true;
-            this.linkLabelYoutubeCoding.Location = new System.Drawing.Point(80, 133);
+            this.linkLabelYoutubeCoding.Location = new System.Drawing.Point(85, 171);
             this.linkLabelYoutubeCoding.Name = "linkLabelYoutubeCoding";
             this.linkLabelYoutubeCoding.Size = new System.Drawing.Size(228, 13);
             this.linkLabelYoutubeCoding.TabIndex = 6;
@@ -549,7 +555,7 @@ namespace dxvk_osd_customizer
             // linkLabelYoutubeGaming
             // 
             this.linkLabelYoutubeGaming.AutoSize = true;
-            this.linkLabelYoutubeGaming.Location = new System.Drawing.Point(80, 106);
+            this.linkLabelYoutubeGaming.Location = new System.Drawing.Point(85, 149);
             this.linkLabelYoutubeGaming.Name = "linkLabelYoutubeGaming";
             this.linkLabelYoutubeGaming.Size = new System.Drawing.Size(233, 13);
             this.linkLabelYoutubeGaming.TabIndex = 5;
@@ -560,7 +566,7 @@ namespace dxvk_osd_customizer
             // linkLabelDiscord
             // 
             this.linkLabelDiscord.AutoSize = true;
-            this.linkLabelDiscord.Location = new System.Drawing.Point(80, 187);
+            this.linkLabelDiscord.Location = new System.Drawing.Point(85, 204);
             this.linkLabelDiscord.Name = "linkLabelDiscord";
             this.linkLabelDiscord.Size = new System.Drawing.Size(191, 13);
             this.linkLabelDiscord.TabIndex = 4;
@@ -571,7 +577,7 @@ namespace dxvk_osd_customizer
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(24, 187);
+            this.label3.Location = new System.Drawing.Point(29, 204);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(46, 13);
             this.label3.TabIndex = 3;
@@ -580,7 +586,7 @@ namespace dxvk_osd_customizer
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(24, 33);
+            this.label1.Location = new System.Drawing.Point(29, 33);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(44, 13);
             this.label1.TabIndex = 1;
@@ -589,13 +595,42 @@ namespace dxvk_osd_customizer
             // linkLabelSource
             // 
             this.linkLabelSource.AutoSize = true;
-            this.linkLabelSource.Location = new System.Drawing.Point(80, 33);
+            this.linkLabelSource.Location = new System.Drawing.Point(85, 33);
             this.linkLabelSource.Name = "linkLabelSource";
             this.linkLabelSource.Size = new System.Drawing.Size(264, 13);
             this.linkLabelSource.TabIndex = 0;
             this.linkLabelSource.TabStop = true;
             this.linkLabelSource.Text = "https://github.com/MrDiagnose/dxvk_osd_customizer";
             this.linkLabelSource.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelSource_LinkClicked);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(29, 68);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(39, 13);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "DXVK:";
+            // 
+            // linkLabelDXVK
+            // 
+            this.linkLabelDXVK.AutoSize = true;
+            this.linkLabelDXVK.Location = new System.Drawing.Point(85, 68);
+            this.linkLabelDXVK.Name = "linkLabelDXVK";
+            this.linkLabelDXVK.Size = new System.Drawing.Size(166, 13);
+            this.linkLabelDXVK.TabIndex = 9;
+            this.linkLabelDXVK.TabStop = true;
+            this.linkLabelDXVK.Text = "https://github.com/doitsujin/dxvk";
+            // 
+            // linkLabelDXVKAsync
+            // 
+            this.linkLabelDXVKAsync.AutoSize = true;
+            this.linkLabelDXVKAsync.Location = new System.Drawing.Point(85, 91);
+            this.linkLabelDXVKAsync.Name = "linkLabelDXVKAsync";
+            this.linkLabelDXVKAsync.Size = new System.Drawing.Size(208, 13);
+            this.linkLabelDXVKAsync.TabIndex = 10;
+            this.linkLabelDXVKAsync.TabStop = true;
+            this.linkLabelDXVKAsync.Text = "https://gitlab.com/Ph42oN/dxvk-gplasync";
             // 
             // FormDxvk
             // 
@@ -671,6 +706,9 @@ namespace dxvk_osd_customizer
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.LinkLabel linkLabelSource;
+        private System.Windows.Forms.LinkLabel linkLabelDXVKAsync;
+        private System.Windows.Forms.LinkLabel linkLabelDXVK;
+        private System.Windows.Forms.Label label4;
     }
 }
 
